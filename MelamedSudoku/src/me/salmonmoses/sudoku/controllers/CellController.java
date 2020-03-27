@@ -24,7 +24,7 @@ public class CellController extends MouseAdapter {
 	public void mouseClicked(MouseEvent e) {
 		int newValue = 0;
 		do {
-			String input = JOptionPane.showInputDialog("Enter number for this cell");
+			String input = JOptionPane.showInputDialog("Enter number for this cell", model.getGrid()[y][x]);
 			if (input == null) {
 				return;
 			}

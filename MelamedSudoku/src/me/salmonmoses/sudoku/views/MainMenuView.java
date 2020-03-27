@@ -6,7 +6,7 @@ import java.awt.*;
 public class MainMenuView extends JFrame {
 	public MainMenuView() {
 		super("Sudoku");
-		Integer[] difficultyLevels = {0, 16, 20, 32, 40, 55, 64};
+		Integer[] difficultyLevels = {16, 20, 32, 40, 55, 64, 0};
 		JPanel content = new JPanel(new GridBagLayout());
 		GridBagConstraints constraints = new GridBagConstraints();
 		JLabel welcome = new JLabel("Welcome to Sudoku!");
