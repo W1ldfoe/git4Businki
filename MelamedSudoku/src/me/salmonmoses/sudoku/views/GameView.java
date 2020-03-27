@@ -1,4 +1,8 @@
-package me.salmonmoses.sudoku;
+package me.salmonmoses.sudoku.views;
+
+import me.salmonmoses.sudoku.controllers.CellController;
+import me.salmonmoses.sudoku.ModelFactory;
+import me.salmonmoses.sudoku.models.SudokuModel;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -8,14 +12,14 @@ import java.awt.*;
 public class GameView extends JFrame {
 	private final JPanel gamePanel;
 
-	public GameView() {
+	public GameView(int tipsAmount) {
 		super("Sudoku");
 		this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
 		this.setSize(300, 300);
 		this.setResizable(false);
 		gamePanel = new JPanel();
 		gamePanel.setLayout(new GridLayout(3, 3));
-		SudokuModel gameModel = ModelFactory.generateModel(16);
+		SudokuModel gameModel = ModelFactory.generateModel(tipsAmount);
 		for (int i = 0; i < 9; ++i) {
 			JPanel squarePanel = new JPanel(new GridLayout(3, 3));
 			squarePanel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
@@ -35,14 +39,14 @@ public class GameView extends JFrame {
 		submitButton.setSize(100, 100);
 		submitButton.addActionListener(e -> {
 			if (gameModel.hasErrors()) {
-				JOptionPane.showMessageDialog(null, "You won!");
+				JOptionPane.showMessageDialog(null, "Well done! You won!");
 			} else {
 				JOptionPane.showMessageDialog(null, "Sorry, you should try better, there are still errors in your " +
 						"grid!");
 			}
 		});
 		this.add(submitButton);
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
 
 	private JLabel createCell(SudokuModel gameModel, int y, int x) {

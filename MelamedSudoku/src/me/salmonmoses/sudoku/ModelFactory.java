@@ -1,5 +1,7 @@
 package me.salmonmoses.sudoku;
 
+import me.salmonmoses.sudoku.models.SudokuModel;
+
 import java.util.Random;
 
 public class ModelFactory {

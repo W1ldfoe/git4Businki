@@ -1,4 +1,7 @@
-package me.salmonmoses.sudoku;
+package me.salmonmoses.sudoku.controllers;
+
+import me.salmonmoses.sudoku.models.SudokuModel;
+import me.salmonmoses.sudoku.views.GameView;
 
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
