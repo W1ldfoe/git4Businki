@@ -2,6 +2,8 @@ package me.salmonmoses.sudoku;
 
 public class Main {
     public static void main(String[] args) {
-	// write your code here
+	    GameView mv = new GameView();
+	    mv.setVisible(true);
+//	    mv.pack();
     }
 }
