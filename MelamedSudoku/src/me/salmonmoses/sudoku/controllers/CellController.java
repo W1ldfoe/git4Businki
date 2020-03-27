@@ -25,12 +25,18 @@ public class CellController extends MouseAdapter {
 		int newValue = 0;
 		do {
 			String input = JOptionPane.showInputDialog("Enter number for this cell");
+			if (input == null) {
+				return;
+			}
+			if(input.equals("")) {
+				input = "0";
+			}
 			try {
 				newValue = Integer.parseInt(input);
-			} catch(NumberFormatException ex) {
-				newValue = -1;
+			} catch (NumberFormatException ex) {
+				newValue = -2;
 			}
-		} while(newValue < 0 || newValue > 9);
+		} while (newValue < 0 || newValue > 9);
 		model.getGrid()[y][x] = newValue;
 		model.validate();
 		view.updateWithModel(model);

@@ -52,7 +52,7 @@ public class GameView extends JFrame {
 	private JLabel createCell(SudokuModel gameModel, int y, int x) {
 		CellController controller = new CellController(gameModel, this, x, y);
 		int cellValue = gameModel.getValueAt(x, y);
-		JLabel cell = new JLabel(cellValue != 0 ? String.valueOf(cellValue) : "");
+		JLabel cell = new JLabel(cellValue != 0 ? String.valueOf(cellValue) : " ");
 		cell.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
 		cell.setOpaque(true);
 		cell.setHorizontalAlignment(SwingConstants.CENTER);
@@ -69,7 +69,7 @@ public class GameView extends JFrame {
 				int x = i % 3 * 3 + j % 3;
 				int y = Math.floorDiv(i, 3) * 3 + Math.floorDiv(j, 3);
 				int cellValue = model.getValueAt(x, y);
-				cellLabel.setText(cellValue != 0 ? String.valueOf(cellValue) : "");
+				cellLabel.setText(cellValue != 0 ? String.valueOf(cellValue) : " ");
 				if (model.isErrorAt(x, y)) {
 					cellLabel.setBackground(Color.RED);
 				} else {
