@@ -1,3 +1,4 @@
+
 //Krekoten Nikita variant 6 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -144,3 +145,4 @@ class BarPanel extends JPanel {
         }
     }
 }
+
