@@ -1,4 +1,4 @@
-//Krekoten Nikita variant 6
+//Krekoten Nikita variant 6 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
